@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Item } from './Statistics.styled';
 import { Notification } from '../Notification/Notification';
 
@@ -21,3 +22,11 @@ export const Statistics = ({
   ) : (
     <Notification message="There is no feedback" />
   );
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
