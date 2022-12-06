@@ -3,9 +3,11 @@ import { Button, ButtonWraper } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <ButtonWraper>
-    <Button onClick={() => onLeaveFeedback(options[0])}>Good</Button>
-    <Button onClick={() => onLeaveFeedback(options[1])}>Neutral</Button>
-    <Button onClick={() => onLeaveFeedback(options[2])}>Bad</Button>
+    {options.map((option, index) => (
+      <Button key={index} onClick={() => onLeaveFeedback(option)}>
+        {option[0].toUpperCase() + option.slice(1)}
+      </Button>
+    ))}
   </ButtonWraper>
 );
 

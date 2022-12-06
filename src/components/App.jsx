@@ -12,10 +12,9 @@ export class App extends Component {
   };
   getStateProperties = Object.keys(this.state);
 
-  handleChange = prp => {
-    const statePropertie = this.getStateProperties.find(e => e === prp);
+  handleChange = propertie => {
     this.setState(p => ({
-      [statePropertie]: p[statePropertie] + 1,
+      [propertie]: p[propertie] + 1,
     }));
   };
 
@@ -23,11 +22,7 @@ export class App extends Component {
     Object.values(this.state).reduce((acc, n) => acc + n, 0);
 
   countPositiveFeedbackPercentage = () =>
-    Math.round(
-      (this.state.good /
-        Object.values(this.state).reduce((acc, n) => acc + n, 0)) *
-        100
-    );
+    Math.round((this.state.good / this.countTotalFeedback()) * 100);
 
   render() {
     const { good, neutral, bad } = this.state;
