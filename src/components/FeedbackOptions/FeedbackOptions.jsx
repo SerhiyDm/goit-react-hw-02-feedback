@@ -4,13 +4,7 @@ import { Button, ButtonWraper } from './FeedbackOptions.styled';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <ButtonWraper>
     {options.map((option, index) => (
-      <Button
-        key={index}
-        onClick={() => onLeaveFeedback(option)}
-        style={{
-          textTransform: 'capitalize',
-        }}
-      >
+      <Button key={index} onClick={() => onLeaveFeedback(option)}>
         {option}
       </Button>
     ))}

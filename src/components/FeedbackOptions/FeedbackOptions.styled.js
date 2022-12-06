@@ -7,6 +7,7 @@ export const Button = styled.button`
   font-weight: 500;
   font-size: 20px;
   color: #545454;
+  text-transform: capitalize;
 
   &:hover {
     background-color: #58b38f;
